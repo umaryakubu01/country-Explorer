@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Countries Explorer</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!--Header-->
+
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <h1>Countries Explorer</h1>
+          <p>Explore countries around the world</p>
+        </div>
+
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a country..."
+          />
+
+          <button id="search-btn">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <!--Main-->
+
+    <main class="main-container">
+      <!-- Loading State -->
+
+      <div id="loading" class="status loading">
+        <div class="spinner"></div>
+        <p>Loading countries...</p>
+      </div>
+
+      <!-- Error State -->
+
+      <div id="error" class="status error hidden">
+        <h2>Something went wrong</h2>
+
+        <p>We couldn't load the countries. Please try again.</p>
+
+        <button id="retry-btn">Try Again</button>
+      </div>
+
+      <!-- Empty State -->
+
+      <div id="empty-state" class="status empty hidden">
+        <h2>No countries found</h2>
+
+        <p>Try searching for another country.</p>
+      </div>
+
+      <!-- Countries -->
+
+      <section id="countries-container" class="countries-grid"></section>
+    </main>
+
+    <!-- Country details modal -->
+
+    <div id="country-modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="close-modal" class="close-btn">×</button>
+
+        <div id="country-details"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

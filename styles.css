@@ -1,0 +1,505 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 30px 20px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.logo p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container {
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 300px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.search-container input:focus {
+    border-color: #333;
+}
+
+.search-container button {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.search-container button:hover {
+    background: #444;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 40px auto;
+}
+
+
+/* =========================
+   COUNTRIES GRID
+========================= */
+
+.countries-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   COUNTRY CARD
+========================= */
+
+.country-card {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* FLAG */
+
+.country-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* CARD INFORMATION */
+
+.country-info {
+    padding: 20px;
+}
+
+.country-info h2 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+.country-info p {
+    font-size: 14px;
+
+    margin-bottom: 8px;
+
+    color: #555;
+}
+
+.country-info strong {
+    color: #222;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.status h2 {
+    margin-bottom: 10px;
+}
+
+.status p {
+    color: #666;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.spinner {
+    width: 40px;
+    height: 40px;
+
+    border: 4px solid #ddd;
+    border-top-color: #222;
+
+    border-radius: 50%;
+
+    margin: 0 auto 15px;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error h2 {
+    color: #c62828;
+}
+
+.error button {
+    margin-top: 20px;
+
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty h2 {
+    color: #555;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 30px;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eee;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #ddd;
+}
+
+
+/* =========================
+   COUNTRY DETAILS
+========================= */
+
+.details-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+.details-container img {
+    width: 100%;
+
+    border-radius: 8px;
+}
+
+.details-info h2 {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.details-info p {
+    margin-bottom: 10px;
+
+    color: #555;
+}
+
+.details-info strong {
+    color: #222;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+
+    .countries-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header-content {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-container {
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .countries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 25px 15px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
+    .countries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-container {
+        width: 92%;
+    }
+
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+.country-card {
+  cursor: pointer;
+}
+
+.country-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.country-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.modal-flag {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.country-modal-content h2 {
+  margin-bottom: 20px;
+}
+
+.country-modal-content p {
+  margin: 10px 0;
+}
